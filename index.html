@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Annual Party Invitation</title>
 	<style>
@@ -8,12 +7,13 @@
 			font-family: 'Kaliurang Signature';
 			src: url('KaliurangSignatureDEMO.ttf') format('truetype');
 			font-weight: bold;
-		  }
+		}
+
 		body {
-			background-color: #e7089546;
-			color: #ffffff;
+			background-color: #ffffff;
+			color: #000000;
 			font-family: 'Kaliurang Signature', sans-serif;
-			font-size: 50px;
+			font-size: 16px;
 			line-height: 1.5;
 			padding: 0px;
 		}
@@ -24,6 +24,9 @@
 			align-items: center;
 			height: 100vh;
 		}
+		.container p {
+			font-size: 10px;
+		  }
 
 		.terminal {
 			border: 1px solid rgb(0, 0, 0);
@@ -49,9 +52,17 @@
 		}
 
 		.terminal::after {
-			content: "";
+			content: "Contact Us: tangxinhuang@live.com & +86 155 2126 4268\n&copy; WAN&TANG Co.,Ltd. Website. All rights reserved.";
+			color: rgb(255, 255, 255);
+			font-size: 16px;
 			display: inline-block;
 			animation: blink-caret 0.75s step-end infinite;
+		}
+
+		@media screen and (max-width: 600px) {
+			main {
+				padding: 0px;
+			}
 		}
 	</style>
 </head>
@@ -105,7 +116,6 @@
 		}
 
 		typeInvitation();
-
 
 		function handleInput() {
 			var response = input.value.toLowerCase().trim();
@@ -179,7 +189,12 @@
 				input.focus();
 			}
 		}
+
 	</script>
+	<footer>
+		<h2>Contact Us: tangxinhuang@live.com & +86 155 2126 4268</h2>
+		<p>&copy; WAN&TANG Co.,Ltd. Website. All rights reserved.</p>
+	</footer>
 </body>
 
 </html>
