@@ -5,17 +5,17 @@
 	<title>Annual Party Invitation</title>
 	<style>
 		@font-face {
-			font-family: 'Giroud Victoryan';
-			src: url('Giroud Victoryan.ttf') format('truetype');
+			font-family: 'Kaliurang Signature';
+			src: url('KaliurangSignatureDEMO.ttf') format('truetype');
 			font-weight: bold;
 		  }
 		body {
 			background-color: #e7089546;
 			color: #ffffff;
-			font-family: 'Giroud Victoryan', sans-serif;
+			font-family: 'Kaliurang Signature', sans-serif;
 			font-size: 50px;
 			line-height: 1.5;
-			padding: 20px;
+			padding: 0px;
 		}
 
 		.container {
@@ -26,24 +26,24 @@
 		}
 
 		.terminal {
-			border: 2px solid white;
+			border: 1px solid rgb(0, 0, 0);
 			padding: 20px;
 			width: 90%;
 			max-width: 600px;
 			height: 90%;
-			max-height: 900px;
+			max-height: 960px;
 			overflow-x: scroll;
 			background-image: url("bg.jpg");
 			background-size: cover;
 			background-color: transparent;
-			color: rgb(222, 7, 179);
-			font-family: Monita Signature PERSONAL USE, sans-serif;
-			font-size: 50px;
+			color: rgb(255, 255, 0);
+			font-family: 'Kaliurang Signature', sans-serif;
+			font-size: 36px;
 			white-space: normal;
 		}
 
 		.terminal::before {
-			content: "love@localhost:~$ ";
+			<!-- content: "love@localhost:~$ "; -->
 			display: inline-block;
 			margin-right: 5px;
 		}
@@ -87,7 +87,7 @@
 				input.style.color = "white";
 				input.style.border = "none";
 				input.style.outline = "none";
-				input.style.fontFamily = "Giroud Victoryan";
+				input.style.fontFamily = "Kaliurang Signature";
 				input.style.fontSize = "50px";
 				input.style.textAlign = "center";
 				input.style.width = "50%";
@@ -117,7 +117,7 @@
 			}
 			else if (response === "no") {
 				regretsCount++;
-				var regretsText = "I'm soooooo sorry to hear that, and I hope you could consider this invitation again, cause Mr. Tang want you be there soooooo much! would you?";
+				var regretsText = "I am soooooo sorry to hear that, and I hope you could consider this invitation again, cause Mr. Tang want you be there soooooo much! would you?";
 				regretsText = regretsText.replace(/oooooo/g, 'oooo'.repeat(regretsCount));
 				terminal.innerHTML = "";
 				index = 0;
@@ -163,7 +163,7 @@
 				input.style.color = "white";
 				input.style.border = "none";
 				input.style.outline = "none";
-				input.style.fontFamily = "Giroud Victoryan";
+				input.style.fontFamily = "Kaliurang Signature";
 				input.style.fontSize = "50px";
 				input.style.textAlign = "center";
 				input.style.width = "50%";
