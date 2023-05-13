@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Annual Party Invitation</title>
 	<style>
@@ -13,7 +14,7 @@
 			background-color: #ffffff;
 			color: #ffffff;
 			font-family: 'Kaliurang Signature', sans-serif;
-			font-size: 16px;
+			font-size: 26px;
 			line-height: 1.5;
 			padding: 0px;
 			background-image: url("bg.jpg");
@@ -25,9 +26,10 @@
 			align-items: center;
 			height: 90vh;
 		}
+
 		.container p {
 			font-size: 10px;
-		  }
+		}
 
 		.terminal {
 			width: 100%;
@@ -36,8 +38,9 @@
 			max-height: 100vh;
 			color: rgb(255, 255, 0);
 			font-family: 'Kaliurang Signature', sans-serif;
-			font-size: 36px;
+			font-size: 56px;
 		}
+
 		@media screen and (max-width: 1800px) {
 			main {
 				padding: 0px;
@@ -52,7 +55,7 @@
 		</div>
 	</div>
 	<script>
-		var invitationText = "Dear Jingjing Wan,\nI would like to invite you to Annual Party next Saturday. \nWould you like to attend? (yes/no)";
+		var invitationText = "Dear Jingjing Wan,\nI would like to invite you to attend the Annual Party next Saturday.\nWould you like to attend? (YES/NO)";
 		var input;
 		var terminal = document.getElementById("terminal");
 		var index = 0;
@@ -68,7 +71,7 @@
 					terminal.innerHTML += invitationText.charAt(index);
 					index++;
 				}
-				setTimeout(typeInvitation, 10);
+				setTimeout(typeInvitation, 200);
 			}
 			else {
 				input = document.createElement("input");
@@ -98,22 +101,22 @@
 
 		function handleInput() {
 			var response = input.value.toLowerCase().trim();
-			if (response === "yes") {
-				var detailsText = "Great, here are the details:\n\n The First Annual Party of WAN&TANG Co.,Ltd. \n\n Date: Saturday, May 20th\nTime: 1:00pm-11:00pm\nLocation: L2201, Lingxiu Garden, Shenzhen CN\n\nPlease let me know if you have any questions, and I hope to see you there!\n\n";
+			if (response === "yes" || response === "Yes" || response === "YES") {
+				var detailsText = "Fantastic! Here are the details:\n\n The First Annual Party of WAN&TANG Co.,Ltd. \n\n Date: Saturday, May 20th, 2023\nTime: 12:00am-11:00pm\nLocation: L-2201, Lingxiu Garden, Linghangcheng, Shenzhen, CN\n\nPlease let me know if you have any questions, and I am looking forward to seeing you there soon!\n\n";
 				terminal.innerHTML = "";
 				index = 0;
 				typeDetails(detailsText);
 			}
-			else if (response === "no") {
+			else if (response === "no" || response === "No" || response === "NO") {
 				regretsCount++;
-				var regretsText = "I am soooooo sorry to hear that, and I hope you could consider this invitation again, cause Mr. Tang want you be there soooooo much! would you?";
+				var regretsText = "I am soooooo sorry to hear that, and I really hope you could consider this invitation again, cause Mr. Tang wants you to be there soooooo much! Would you?";
 				regretsText = regretsText.replace(/oooooo/g, 'oooo'.repeat(regretsCount));
 				terminal.innerHTML = "";
 				index = 0;
 				typeRegrets(regretsText);
 			}
 			else {
-				terminal.innerHTML += "<br/>Invalid response. Please type 'yes' or 'no'!";
+				terminal.innerHTML += "<br/>Invalid response. Please type 'YES' or 'NO'!";
 				typeInvitation();
 				return;
 			}
@@ -130,7 +133,7 @@
 				index++;
 				setTimeout(function () {
 					typeDetails(text);
-				}, 50);
+				}, 200);
 			}
 		}
 
@@ -143,7 +146,9 @@
 					terminal.innerHTML += text.charAt(index);
 				}
 				index++;
-				setTimeout(function () { typeRegrets(text); }, 50);
+				setTimeout(function () {
+					typeRegrets(text);
+				}, 200);
 			}
 			else {
 				input = document.createElement("input");
