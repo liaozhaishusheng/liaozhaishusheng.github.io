@@ -5,53 +5,46 @@
 	<title>Annual Party Invitation</title>
 	<style>
 		@font-face {
-			font-family: 'Giroud Victoryan';
-			src: url('Giroud Victoryan.ttf') format('truetype');
+			font-family: 'Kaliurang Signature';
+			src: url('KaliurangSignatureDEMO.ttf') format('truetype');
 			font-weight: bold;
-		  }
+		}
+
 		body {
-			background-color: #e7089546;
+			background-color: #ffffff;
 			color: #ffffff;
-			font-family: 'Giroud Victoryan', sans-serif;
-			font-size: 50px;
+			font-family: 'Kaliurang Signature', sans-serif;
+			font-size: 26px;
 			line-height: 1.5;
-			padding: 20px;
+			padding: 0px;
+			background-image: url("bg.jpg");
 		}
 
 		.container {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			height: 100vh;
+			height: 90vh;
+		}
+
+		.container p {
+			font-size: 10px;
 		}
 
 		.terminal {
-			border: 2px solid white;
-			padding: 20px;
-			width: 90%;
-			max-width: 600px;
-			height: 90%;
-			max-height: 900px;
-			overflow-x: scroll;
-			background-image: url("bg.jpg");
-			background-size: cover;
-			background-color: transparent;
-			color: rgb(222, 7, 179);
-			font-family: Monita Signature PERSONAL USE, sans-serif;
-			font-size: 50px;
-			white-space: normal;
+			width: 100%;
+			max-width: 100vh;
+			height: 100%;
+			max-height: 100vh;
+			color: rgb(255, 255, 0);
+			font-family: 'Kaliurang Signature', sans-serif;
+			font-size: 56px;
 		}
 
-		.terminal::before {
-			content: "love@localhost:~$ ";
-			display: inline-block;
-			margin-right: 5px;
-		}
-
-		.terminal::after {
-			content: "";
-			display: inline-block;
-			animation: blink-caret 0.75s step-end infinite;
+		@media screen and (max-width: 1800px) {
+			main {
+				padding: 0px;
+			}
 		}
 	</style>
 </head>
@@ -62,7 +55,7 @@
 		</div>
 	</div>
 	<script>
-		var invitationText = "Dear Jingjing Wan,\nI would like to invite you to Annual Party next Saturday. \nWould you like to attend? (yes/no)";
+		var invitationText = "Dear Jingjing Wan,\nI would like to invite you to attend the Annual Party next Saturday.\nWould you like to attend? (YES/NO)";
 		var input;
 		var terminal = document.getElementById("terminal");
 		var index = 0;
@@ -78,7 +71,7 @@
 					terminal.innerHTML += invitationText.charAt(index);
 					index++;
 				}
-				setTimeout(typeInvitation, 10);
+				setTimeout(typeInvitation, 200);
 			}
 			else {
 				input = document.createElement("input");
@@ -87,8 +80,8 @@
 				input.style.color = "white";
 				input.style.border = "none";
 				input.style.outline = "none";
-				input.style.fontFamily = "Giroud Victoryan";
-				input.style.fontSize = "50px";
+				input.style.fontFamily = "Kaliurang Signature";
+				input.style.fontSize = "80px";
 				input.style.textAlign = "center";
 				input.style.width = "50%";
 				input.style.display = "block";
@@ -106,25 +99,24 @@
 
 		typeInvitation();
 
-
 		function handleInput() {
 			var response = input.value.toLowerCase().trim();
-			if (response === "yes") {
-				var detailsText = "Great, here are the details:\n\n The First Annual Party of WAN&TANG Co.,Ltd. \n\n Date: Saturday, May 20th\nTime: 1:00pm-11:00pm\nLocation: L2201, Lingxiu Garden, Shenzhen CN\n\nPlease let me know if you have any questions, and I hope to see you there!\n\n";
+			if (response === "yes" || response === "Yes" || response === "YES") {
+				var detailsText = "Fantastic! Here are the details:\n\n The First Annual Party of WAN&TANG Co.,Ltd. \n\n Date: Saturday, May 20th, 2023\nTime: 12:00am-11:00pm\nLocation: L-2201, Lingxiu Garden, Linghangcheng, Shenzhen, CN\n\nPlease let me know if you have any questions, and I am looking forward to seeing you there soon!\n\n";
 				terminal.innerHTML = "";
 				index = 0;
 				typeDetails(detailsText);
 			}
-			else if (response === "no") {
+			else if (response === "no" || response === "No" || response === "NO") {
 				regretsCount++;
-				var regretsText = "I'm soooooo sorry to hear that, and I hope you could consider this invitation again, cause Mr. Tang want you be there soooooo much! would you?";
+				var regretsText = "I am soooooo sorry to hear that, and I really hope you could consider this invitation again, cause Mr. Tang wants you to be there soooooo much! Would you?";
 				regretsText = regretsText.replace(/oooooo/g, 'oooo'.repeat(regretsCount));
 				terminal.innerHTML = "";
 				index = 0;
 				typeRegrets(regretsText);
 			}
 			else {
-				terminal.innerHTML += "<br/>Invalid response. Please type 'yes' or 'no'!";
+				terminal.innerHTML += "<br/>Invalid response. Please type 'YES' or 'NO'!";
 				typeInvitation();
 				return;
 			}
@@ -141,7 +133,7 @@
 				index++;
 				setTimeout(function () {
 					typeDetails(text);
-				}, 50);
+				}, 200);
 			}
 		}
 
@@ -154,7 +146,9 @@
 					terminal.innerHTML += text.charAt(index);
 				}
 				index++;
-				setTimeout(function () { typeRegrets(text); }, 50);
+				setTimeout(function () {
+					typeRegrets(text);
+				}, 200);
 			}
 			else {
 				input = document.createElement("input");
@@ -163,7 +157,7 @@
 				input.style.color = "white";
 				input.style.border = "none";
 				input.style.outline = "none";
-				input.style.fontFamily = "Giroud Victoryan";
+				input.style.fontFamily = "Kaliurang Signature";
 				input.style.fontSize = "50px";
 				input.style.textAlign = "center";
 				input.style.width = "50%";
@@ -179,7 +173,12 @@
 				input.focus();
 			}
 		}
+
 	</script>
+	<footer>
+		<h2>Contact Us: tangxinhuang@live.com & +86 155 2126 4268</h2>
+		<p>&copy; WAN&TANG Co.,Ltd. Website. All rights reserved.</p>
+	</footer>
 </body>
 
 </html>
